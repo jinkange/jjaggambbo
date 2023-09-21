@@ -1,15 +1,17 @@
 // Page1.js
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-const Play = () => {
+const Play = ({navigation}) => {
   return (
     <View>
-      <Text>Play Content</Text>
-      {/* 다른 내용 추가 */}
+      <View>게</View>
+      <View>별명/코인/티켓</View>
+      <Button title='시작하기'/>
+      <Button title='나가기' onPress={() => navigation.navigate('Home')}/>
     </View>
   );
 }
