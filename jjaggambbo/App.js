@@ -15,9 +15,7 @@ import Mypage from './components/mypage/Mypage';
 import Shop from './components/shop/Shop';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { FontAwesome } from '@expo/vector-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 import FontAwesome5Icon from "react-native-vector-icons/AntDesign";
 
 

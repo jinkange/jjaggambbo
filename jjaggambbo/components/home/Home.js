@@ -20,7 +20,7 @@ const Home = ({navigation}) => {
             style={{ padding: 0 }}
             source={{
               uri:
-                'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
+              '/jjaggambbo/assets/main.jpg',
             }}
           />
       <Card.Divider />
@@ -38,7 +38,7 @@ const Home = ({navigation}) => {
             style={{ padding: 0 }}
             source={{
               uri:
-                'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
+              '/jjaggambbo/assets/main.jpg',
             }}
           />
       <Card.Divider />
@@ -56,7 +56,7 @@ const Home = ({navigation}) => {
             style={{ padding: 0 }}
             source={{
               uri:
-                'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
+              '/jjaggambbo/assets/main.jpg',
             }}
           />
       <Card.Divider />
@@ -74,7 +74,7 @@ const Home = ({navigation}) => {
             style={{ padding: 0 }}
             source={{
               uri:
-                'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
+                '/jjaggambbo/assets/main.jpg',
             }}
           />
       <Card.Divider />
@@ -92,7 +92,7 @@ const Home = ({navigation}) => {
             style={{ padding: 0 }}
             source={{
               uri:
-                'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
+              '/jjaggambbo/assets/main.jpg',
             }}
           />
       <Card.Divider />
