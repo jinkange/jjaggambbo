@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "expo-cli": "^6.3.10"
+    "@react-navigation/native": "^6.1.7",
+    "@react-navigation/stack": "^6.3.17",
+    "expo-cli": "^6.3.10",
+    "react-native-gesture-handler": "^2.13.0",
+    "react-native-reanimated": "^3.5.2",
+    "react-native-screens": "^3.25.0"
   }
 }

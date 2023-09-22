@@ -10,8 +10,8 @@ const Stack = createStackNavigator();
 const Shop = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="ProductList" component={ProductList} />
-      <Stack.Screen name="ProductDetail" component={ProductDetail} />
+      <Stack.Screen name="ProductList" component={ProductList} options={{ headerShown: false }}/>
+      <Stack.Screen name="ProductDetail" component={ProductDetail} options={{ headerShown: false }}/>
     </Stack.Navigator>
   );
 }

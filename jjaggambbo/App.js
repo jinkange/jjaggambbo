@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+const Stack = createNativeStackNavigator();
+
 import Header from './components/common/Header';
 
 import Home from './components/home/Home';
@@ -12,21 +14,67 @@ import Setting from './components/setting/Setting';
 import Mypage from './components/mypage/Mypage';
 import Shop from './components/shop/Shop';
 
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import FontAwesome5Icon from "react-native-vector-icons/AntDesign";
+
+
 const Tab = createBottomTabNavigator();
 
+ const ScreenHeghit = Dimensions.get('window').height;
+
+ function RootNavigator() {
+  return (
+    <Stack.Navigator initialRouteName='Home' >
+        <Stack.Screen name="Home" component={TabNavi} options={{ headerShown: true ,header: () => <Header title="header"/>}}/>
+        <Stack.Screen name="Play" component={Play} options={{ headerShown: false}}/>
+        {/* <Stack.Screen name="Shop" component={Shop} />
+        <Stack.Screen name="Mypage" component={Mypage} />
+        <Stack.Screen name="Setting" component={Setting} /> */}
+      </Stack.Navigator>
+  );
+}
+
+const TabNavi = () =>{
+  return(
+    <Tab.Navigator initialRouteName='Home'>
+      <Tab.Screen name="Home" component={Home} options={{ 
+        headerShown: false, 
+        tabBarIcon: () => (
+            <FontAwesome5Icon  name="home" size={24}/>
+            ),
+            }}/>
+        <Tab.Screen name="Shop" component={Shop} options={{ 
+          headerShown: false ,
+          tabBarIcon: () => (
+            <FontAwesome5Icon name="isv" size={24} />
+            )
+          }} />
+        <Tab.Screen name="Mypage" component={Mypage} options={{ 
+          headerShown: false,
+          tabBarIcon: () => (
+            <FontAwesome5Icon  name="user" size={24}/>
+            )
+          }}/>
+        <Tab.Screen name="Setting" component={Setting} options={{ 
+          headerShown: false,
+          tabBarIcon: () => (
+            <FontAwesome5Icon  name="tool" size={24}/>
+            )
+          }}/>
+      </Tab.Navigator>
+      )
+}
 export default function App() {
   return ( 
-    <NavigationContainer>
-       <Header title="공통 헤더" /> 
-       <Tab.Navigator initialRouteName="Home">
-        <Tab.Screen name="Home" component={Home}/>
-        {/* <Tab.Screen name="Play" component={Play} />
-        <Tab.Screen name="Setting" component={Setting} />
-        <Tab.Screen name="Mypage" component={Mypage} />
-        <Tab.Screen name="Shop" component={Shop} /> */}
-        {/* 다른 화면들 추가 */}
-      </Tab.Navigator>
+
+
+<>
+<NavigationContainer>
+<RootNavigator />
     </NavigationContainer>
+</>
+
   );
 }
 

@@ -1,12 +1,124 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button, ScrollView } from 'react-native';
+import Play from '../play/Play';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+const Tab = createBottomTabNavigator();
+import Shop from '../shop/Shop';
+import Mypage from '../mypage/Mypage';
+import Setting from '../setting/Setting';
+import { NavigationContainer } from '@react-navigation/native';
+import { Card,Chip  } from '@rneui/themed';
+import axios from 'axios';
+import client from '../../utils/axios/axios';
 
-const Home = () => {
+const Home = ({navigation}) => {
+  
+
   return (
+    <ScrollView >
     <View>
-      <Text>Page 1 Content</Text>
-      {/* Page 1에 해당하는 내용 추가 */}
+    <Button
+        title='통신 테스트'
+				// 다른 페이지로 이동
+        onPress={() => {
+          //const response = axios.get(url);
+          const response = client.get('/test');
+          response.then((response) => {
+            console.log(response.data);
+          })
+          
+        }}/>
+
+      <Card>
+      <Card.Title>짱깸뽀 1번 기계</Card.Title>
+      <Card.Divider />
+      <Card.Image
+            style={{ padding: 0 }}
+            source={{
+              uri:
+              '/jjaggambbo/assets/main.jpg',
+            }}
+          />
+      <Card.Divider />
+      <Button
+        title='PLAY'
+				// 다른 페이지로 이동
+        onPress={() => navigation.navigate('Play')}/>
+      </Card>
     </View>
+    <View>
+      <Card>
+      <Card.Title>짱깸뽀 1번 기계</Card.Title>
+      <Card.Divider />
+      <Card.Image
+            style={{ padding: 0 }}
+            source={{
+              uri:
+              '/jjaggambbo/assets/main.jpg',
+            }}
+          />
+      <Card.Divider />
+      <Button
+        title='PLAY'
+				// 다른 페이지로 이동
+        onPress={() => navigation.navigate('Play')}/>
+      </Card>
+    </View>
+    <View>
+      <Card>
+      <Card.Title>짱깸뽀 1번 기계</Card.Title>
+      <Card.Divider />
+      <Card.Image
+            style={{ padding: 0 }}
+            source={{
+              uri:
+              '/jjaggambbo/assets/main.jpg',
+            }}
+          />
+      <Card.Divider />
+      <Button
+        title='PLAY'
+				// 다른 페이지로 이동
+        onPress={() => navigation.navigate('Play')}/>
+      </Card>
+    </View>
+    <View>
+      <Card>
+      <Card.Title>짱깸뽀 1번 기계</Card.Title>
+      <Card.Divider />
+      <Card.Image
+            style={{ padding: 0 }}
+            source={{
+              uri:
+                '/jjaggambbo/assets/main.jpg',
+            }}
+          />
+      <Card.Divider />
+      <Button
+        title='PLAY'
+				// 다른 페이지로 이동
+        onPress={() => navigation.navigate('Play')}/>
+      </Card>
+    </View>
+    <View>
+      <Card>
+      <Card.Title>짱깸뽀 1번 기계</Card.Title>
+      <Card.Divider />
+      <Card.Image
+            style={{ padding: 0 }}
+            source={{
+              uri:
+              '/jjaggambbo/assets/main.jpg',
+            }}
+          />
+      <Card.Divider />
+      <Button
+        title='PLAY'
+				// 다른 페이지로 이동
+        onPress={() => navigation.navigate('Play')}/>
+      </Card>
+    </View>
+    </ScrollView>
   );
 }
 
