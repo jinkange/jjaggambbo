@@ -20,10 +20,10 @@ export default function App() {
        <Header title="공통 헤더" /> 
        <Tab.Navigator initialRouteName="Home">
         <Tab.Screen name="Home" component={Home}/>
-        <Tab.Screen name="Play" component={Play} />
+        {/* <Tab.Screen name="Play" component={Play} />
         <Tab.Screen name="Setting" component={Setting} />
         <Tab.Screen name="Mypage" component={Mypage} />
-        <Tab.Screen name="Shop" component={Shop} />
+        <Tab.Screen name="Shop" component={Shop} /> */}
         {/* 다른 화면들 추가 */}
       </Tab.Navigator>
     </NavigationContainer>
