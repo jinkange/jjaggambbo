@@ -8,8 +8,8 @@ const Stack = createStackNavigator();
 const Play = ({navigation}) => {
   return (
     <View>
-      <View>게</View>
-      <View>별명/코인/티켓</View>
+      <View><Text>기계 화면</Text></View>
+      <View><Text>별명/코인/티켓</Text></View>
       <Button title='시작하기'/>
       <Button title='나가기' onPress={() => navigation.navigate('Home')}/>
     </View>

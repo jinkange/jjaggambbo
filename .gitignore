@@ -33,3 +33,8 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+
+#개발 환경
+UI/*
+개발 환경/*
