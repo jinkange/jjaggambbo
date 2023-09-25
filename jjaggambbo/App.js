@@ -67,12 +67,10 @@ const TabNavi = () =>{
 }
 export default function App() {
   return ( 
-
-
 <>
 <NavigationContainer>
 <RootNavigator />
-    </NavigationContainer>
+</NavigationContainer>
 </>
 
   );
