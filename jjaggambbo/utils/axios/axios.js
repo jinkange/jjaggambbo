@@ -1,10 +1,11 @@
 import axios from 'axios';
-//const baseUrl = '192.168.0.238';
+import { ADUINO_BASE_URL,API_BASE_URL } from '@env';
 
-const baseUrl = 'http://27.124.206.159:100/';
-
-  const aduino = axios.create({
-    baseURL: baseUrl,
+const aduino = axios.create({
+    baseURL: ADUINO_BASE_URL,
 })
 
+const api = axios.create({
+  baseURL: API_BASE_URL,
+})
 export default aduino;
