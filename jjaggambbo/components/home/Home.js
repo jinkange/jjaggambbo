@@ -117,7 +117,7 @@ const Home = ({navigation}) => {
 				// 다른 페이지로 이동
         onPress={() => navigation.navigate('Play')}/>
       </Card>
-    </View>
+    </View>  
     </ScrollView>
   );
 }
