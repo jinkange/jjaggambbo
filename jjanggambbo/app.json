@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "jjanggambbo",
+    "slug": "jjanggambbo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/jjanggambbo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/jjanggambbo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.jinkange.jjanggambbo",
+      "supportsTablet": true,
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/jjanggambbo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.jinkange.jjanggambbo",
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./assets/jjanggambbo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6dd65e9e-9101-418c-b6f4-8aefbfd11260"
+      }
+    },
+    "owner": "jinkange"
+  }
+}
