@@ -3,12 +3,17 @@ import React from 'react';
 import { View, Text,StyleSheet  } from 'react-native';
 import { Card,Chip  } from '@rneui/themed';
 
+import { Dimensions } from 'react-native'
+let ScreenHeight = Dimensions.get("window").height;
+let ScreenWidth = Dimensions.get("window").width;
+
+
 const Header = () => {
   const styles = StyleSheet.create({
     contentView: {
       flex: 1,
       flexDirection:'row',
-      width:'100%'
+      width:ScreenWidth
     },
   });
 

@@ -7,8 +7,12 @@ import WebView from 'react-native-webview';
 import { ADUINO_CAMERA1_URL } from '@env';
 import { STREMING_URL } from '../../const/const';
 import { Card,Chip  } from '@rneui/themed';
-
+import { Dimensions } from 'react-native'
+let ScreenHeight = Dimensions.get("window").height;
+let ScreenWidth = Dimensions.get("window").width;
 const Stack = createStackNavigator();
+
+
 
 const Play = ({navigation}) => {
   return Platform.OS === "web" ? (
@@ -19,7 +23,6 @@ const Play = ({navigation}) => {
       <Card.Title>짱깸뽀 1번 기계</Card.Title>
       <Card.Divider />
       {/* WebView를 사용하여 웹페이지를 표시 */}
-      <iframe src= {ADUINO_CAMERA1_URL+STREMING_URL} height={'400'} width={'100%'} />
       <Card.Divider />
       <Button
         title='PLAY'
@@ -64,7 +67,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   card: {
-    width: '90%',
+    width: ScreenWidth,
     height: 400, // 카드의 높이 설정
   },
   webview: {

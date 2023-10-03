@@ -1,20 +1,9 @@
 import React from 'react';
-import { View, Text, Button, ScrollView } from 'react-native';
-import Play from '../play/Play';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-const Tab = createBottomTabNavigator();
-import Shop from '../shop/Shop';
-import Mypage from '../mypage/Mypage';
-import Setting from '../setting/Setting';
-import { NavigationContainer } from '@react-navigation/native';
-import { Card,Chip  } from '@rneui/themed';
-import axios from 'axios';
-import aduino from '../../utils/axios/axios';
-
+import { View, Button, ScrollView } from 'react-native';
+import { Card } from '@rneui/themed';
 
 import mainImage from '../../assets/main.jpg';
-
-
+import { aduino } from '../../utils/axios/axios';
 
 const Home = ({navigation}) => {
   
@@ -27,6 +16,7 @@ const Home = ({navigation}) => {
 				// 다른 페이지로 이동
         onPress={() => {
           //const response = axios.get(url);
+          
           const response = aduino.get('/test');
           response.then((response) => {
             console.log(response.data);

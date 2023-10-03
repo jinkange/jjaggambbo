@@ -19,6 +19,7 @@
       "supportsTablet": true,
       "buildNumber": "1.0.0"
     },
+    "jsEngine": "hermes",
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/jjanggambbo.png",
@@ -35,6 +36,23 @@
         "projectId": "6dd65e9e-9101-418c-b6f4-8aefbfd11260"
       }
     },
-    "owner": "jinkange"
+    "owner": "jinkange",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/6dd65e9e-9101-418c-b6f4-8aefbfd11260"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {"android": {
+          "deleteDebugFilesForVariant":  true 
+        },
+        "ios": {
+        }
+      }
+    ]
+    ]
   }
 }
