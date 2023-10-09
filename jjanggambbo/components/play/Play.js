@@ -23,6 +23,7 @@ const Play = ({navigation}) => {
       <Card.Title>짱깸뽀 1번 기계</Card.Title>
       <Card.Divider />
       {/* WebView를 사용하여 웹페이지를 표시 */}
+      <iframe src= {ADUINO_CAMERA1_URL+STREMING_URL} height={'400'} width={'100%'} />
       <Card.Divider />
       <Button
         title='PLAY'
