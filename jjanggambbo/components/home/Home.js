@@ -11,6 +11,9 @@ import {
 } from "react-native";
 import { Card } from "@rneui/themed";
 
+import background from "../../assets/main/background.png";
+import game from "../../assets/game.png";
+
 import mainImage from "../../assets/main.jpg";
 import { aduino } from "../../utils/axios/axios";
 {
@@ -31,69 +34,69 @@ const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("/assets/main/background.png")}
+        source={background}
         style={styles.background}
         resizeMode="cover"
       >
-        <ScrollView style={styles.viewRoot}>
+        <ScrollView contentContainerStyle={styles.viewRoot}>
           <View style={styles.viewWrap}>
+            <View style={styles.titleTextWrap}>
+              <Text style={styles.titleText}>짱깸뽀 1번 오락기</Text>
+            </View>
             <View style={styles.viewImgWrap}>
-              <View style={styles.titleTextWrap}>
-                <Text style={styles.titleText}>짱깸뽀 1번 오락기</Text>
-              </View>
               <Image
                 style={styles.viewImg}
-                source={require("/assets/game.png")}
+                source={game}
+                resizeMode="contain"
               />
-              <View style={styles.BtnWrap}>
-                <Pressable
-                  style={styles.Btn}
-                  // 다른 페이지로 이동
-                  onPress={() => navigation.navigate("Play")}
-                >
-                  <Text style={styles.BtnText}>PLAY</Text>
-                </Pressable>
-              </View>
+            </View>
+            <View style={styles.BtnWrap}>
+              <Pressable
+                style={styles.Btn}
+                // 다른 페이지로 이동
+                onPress={() => navigation.navigate("Play")}
+              >
+                <Text style={styles.BtnText}>PLAY</Text>
+              </Pressable>
             </View>
           </View>
           <View style={styles.viewWrap}>
+            <View style={styles.titleTextWrap}>
+              <Text style={styles.titleText}>짱깸뽀 2번 오락기</Text>
+            </View>
             <View style={styles.viewImgWrap}>
-              <View style={styles.titleTextWrap}>
-                <Text style={styles.titleText}>짱깸뽀 2번 오락기</Text>
+              <View style={styles.titleTextUseWrap}>
+                <Text style={styles.titleTextUse}> 사용중</Text>
               </View>
               <Image
                 style={styles.viewImg}
-                source={require("/assets/game.png")}
+                source={game}
+                resizeMode="contain"
               />
-              <View style={styles.BtnWrap}>
-                <Pressable
-                  style={styles.Btn}
-                  // 다른 페이지로 이동
-                  onPress={() => navigation.navigate("Play")}
-                >
-                  <Text style={styles.BtnText}>PLAY</Text>
-                </Pressable>
-              </View>
+            </View>
+            <View style={styles.BtnWrap}>
+              <Pressable
+                style={styles.Btn}
+                // 다른 페이지로 이동
+                onPress={() => navigation.navigate("Play")}
+              >
+                <Text style={styles.BtnText}>관전하기</Text>
+              </Pressable>
             </View>
           </View>
           <View style={styles.viewWrap}>
+            <View style={styles.titleTextWrap}>
+              <Text style={styles.titleText}>짱깸뽀 3번 오락기</Text>
+            </View>
             <View style={styles.viewImgWrap}>
-              <View style={styles.titleTextWrap}>
-                <Text style={styles.titleText}>짱깸뽀 3번 오락기</Text>
+              <View style={styles.titleTextUseWrap}>
+                <Text style={styles.titleTextUse}> 점겅중</Text>
               </View>
               <Image
                 style={styles.viewImg}
-                source={require("/assets/game.png")}
+                source={game}
+                resizeMode="contain"
               />
-              <View style={styles.BtnWrap}>
-                <Pressable
-                  style={styles.Btn}
-                  // 다른 페이지로 이동
-                  onPress={() => navigation.navigate("Play")}
-                >
-                  <Text style={styles.BtnText}>PLAY</Text>
-                </Pressable>
-              </View>
             </View>
           </View>
         </ScrollView>
@@ -111,16 +114,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   viewRoot: {
-    paddingHorizontal: 40,
+    flex: 1,
+    justifyContent: "center", // 세로 중앙 정렬
+    alignItems: "center", // 가로 중앙 정렬
   },
   viewWrap: {
-    width: "100%",
-    paddingVertical: 40,
+    width: 250, // 원하는 너비로 설정
+    justifyContent: "center", // 세로 중앙 정렬
+    alignItems: "center", // 가로 중앙 정렬
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+
     borderRadius: 15,
     backgroundColor: "#00000022",
-    //backgroundColor: "#ffffff1f",
-    marginTop: 40,
+    marginTop: 20,
+
     justifyContent: "center",
+
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -133,10 +143,15 @@ const styles = StyleSheet.create({
   },
   titleTextWrap: {
     backgroundColor: "#7a3700",
+
+    width: "80%",
+    height: 30,
+
     paddingHorizontal: 20,
     paddingVertical: 5,
     borderTopEndRadius: 15,
     borderTopStartRadius: 15,
+
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -149,16 +164,34 @@ const styles = StyleSheet.create({
   },
   titleText: {
     textAlign: "center",
+    fontSize: 15, // 수정: "1rem" 대신 숫자 값을 사용
+    color: "white",
+    fontFamily: "고령딸기체",
+  },
+  titleTextUseWrap: {
+    position: "absolute",
+    backgroundColor: "#0000007d",
+    height: 200,
+    zIndex: 10,
+    width: "100%",
+    top: 90,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  titleTextUse: {
+    textAlign: "center",
     fontSize: 30, // 수정: "1rem" 대신 숫자 값을 사용
     color: "white",
     fontFamily: "고령딸기체",
   },
   viewImgWrap: {
+    width: "80%",
     alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "black",
   },
   viewImg: {
-    width: 900,
-    height: 400,
+    width: "100%",
   },
   Btn: {
     alignItems: "center",
@@ -168,14 +201,13 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     elevation: 3,
     backgroundColor: "#25a000",
-    width: 315,
   },
   BtnText: {
-    fontSize: 16,
+    fontSize: 20,
     lineHeight: 21,
-    fontWeight: "bold",
     letterSpacing: 0.25,
     color: "white",
+    fontFamily: "고령딸기체",
   },
   BtnWrap: {
     shadowColor: "#000",

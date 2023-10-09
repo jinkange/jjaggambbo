@@ -14,6 +14,10 @@ import { Dimensions } from "react-native";
 let ScreenHeight = Dimensions.get("window").height;
 let ScreenWidth = Dimensions.get("window").width;
 
+import profile from "../../assets/main/profile.png";
+import silver_coin from "../../assets/main/silver_coin.png";
+import gold_coin from "../../assets/main/gold_coin.png";
+
 const Header = () => {
   return (
     <>
@@ -21,10 +25,7 @@ const Header = () => {
       <View style={styles.root}>
         <View style={styles.userRoot}>
           <View>
-            <Image
-              style={styles.userNameImg}
-              source={require("/assets/main/profile.png")}
-            />
+            <Image style={styles.userNameImg} source={profile} />
           </View>
           <View>
             <Text style={styles.userNameText}>진민강</Text>
@@ -33,10 +34,7 @@ const Header = () => {
         <View style={styles.coinRoot}>
           <View style={styles.coinWrap}>
             <View>
-              <Image
-                style={styles.coinImg}
-                source={require("/assets/main/silver_coin.png")}
-              />
+              <Image style={styles.coinImg} source={silver_coin} />
             </View>
             <View style={styles.coinTextWrap}>
               <Text style={styles.coinText}>0</Text>
@@ -44,10 +42,7 @@ const Header = () => {
           </View>
           <View style={styles.coinWrap}>
             <View>
-              <Image
-                style={styles.coinImg}
-                source={require("/assets/main/gold_coin.png")}
-              />
+              <Image style={styles.coinImg} source={gold_coin} />
             </View>
             <View style={styles.coinTextWrap}>
               <Text style={styles.coinText}>10</Text>
