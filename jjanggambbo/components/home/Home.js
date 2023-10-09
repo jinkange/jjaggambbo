@@ -1,4 +1,5 @@
 import React from "react";
+import { useCallback } from "react";
 import {
   View,
   Button,
@@ -14,8 +15,11 @@ import { Card } from "@rneui/themed";
 import background from "../../assets/main/background.png";
 import game from "../../assets/game.png";
 
-import mainImage from "../../assets/main.jpg";
-import { aduino } from "../../utils/axios/axios";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+
+SplashScreen.preventAutoHideAsync();
+
 {
   /* <Button
             title="통신 테스트"
@@ -31,6 +35,19 @@ import { aduino } from "../../utils/axios/axios";
           /> */
 }
 const Home = ({ navigation }) => {
+  const [fontsLoaded] = useFonts({
+    고령딸기체: require("../../assets/font/고령딸기체.ttf"),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -38,65 +55,67 @@ const Home = ({ navigation }) => {
         style={styles.background}
         resizeMode="cover"
       >
-        <ScrollView contentContainerStyle={styles.viewRoot}>
-          <View style={styles.viewWrap}>
-            <View style={styles.titleTextWrap}>
-              <Text style={styles.titleText}>짱깸뽀 1번 오락기</Text>
-            </View>
-            <View style={styles.viewImgWrap}>
-              <Image
-                style={styles.viewImg}
-                source={game}
-                resizeMode="contain"
-              />
-            </View>
-            <View style={styles.BtnWrap}>
-              <Pressable
-                style={styles.Btn}
-                // 다른 페이지로 이동
-                onPress={() => navigation.navigate("Play")}
-              >
-                <Text style={styles.BtnText}>PLAY</Text>
-              </Pressable>
-            </View>
-          </View>
-          <View style={styles.viewWrap}>
-            <View style={styles.titleTextWrap}>
-              <Text style={styles.titleText}>짱깸뽀 2번 오락기</Text>
-            </View>
-            <View style={styles.viewImgWrap}>
-              <View style={styles.titleTextUseWrap}>
-                <Text style={styles.titleTextUse}> 사용중</Text>
+        <ScrollView style={styles.viewRoot}>
+          <View style={styles.scrikkViewWrap}>
+            <View style={styles.viewWrap}>
+              <View style={styles.titleTextWrap}>
+                <Text style={styles.titleText}>짱깸뽀 1번 오락기</Text>
               </View>
-              <Image
-                style={styles.viewImg}
-                source={game}
-                resizeMode="contain"
-              />
-            </View>
-            <View style={styles.BtnWrap}>
-              <Pressable
-                style={styles.Btn}
-                // 다른 페이지로 이동
-                onPress={() => navigation.navigate("Play")}
-              >
-                <Text style={styles.BtnText}>관전하기</Text>
-              </Pressable>
-            </View>
-          </View>
-          <View style={styles.viewWrap}>
-            <View style={styles.titleTextWrap}>
-              <Text style={styles.titleText}>짱깸뽀 3번 오락기</Text>
-            </View>
-            <View style={styles.viewImgWrap}>
-              <View style={styles.titleTextUseWrap}>
-                <Text style={styles.titleTextUse}> 점겅중</Text>
+              <View style={styles.viewImgWrap}>
+                <Image
+                  style={styles.viewImg}
+                  source={game}
+                  resizeMode="contain"
+                />
               </View>
-              <Image
-                style={styles.viewImg}
-                source={game}
-                resizeMode="contain"
-              />
+              <View style={styles.BtnWrap}>
+                <Pressable
+                  style={styles.Btn}
+                  // 다른 페이지로 이동
+                  onPress={() => navigation.navigate("Play")}
+                >
+                  <Text style={styles.BtnText}>PLAY</Text>
+                </Pressable>
+              </View>
+            </View>
+            <View style={styles.viewWrap}>
+              <View style={styles.titleTextWrap}>
+                <Text style={styles.titleText}>짱깸뽀 2번 오락기</Text>
+              </View>
+              <View style={styles.viewImgWrap}>
+                <View style={styles.titleTextUseWrap}>
+                  <Text style={styles.titleTextUse}> 사용중</Text>
+                </View>
+                <Image
+                  style={styles.viewImg}
+                  source={game}
+                  resizeMode="contain"
+                />
+              </View>
+              <View style={styles.BtnWrap}>
+                <Pressable
+                  style={styles.Btn}
+                  // 다른 페이지로 이동
+                  onPress={() => navigation.navigate("Play")}
+                >
+                  <Text style={styles.BtnText}>관전하기</Text>
+                </Pressable>
+              </View>
+            </View>
+            <View style={styles.viewWrap}>
+              <View style={styles.titleTextWrap}>
+                <Text style={styles.titleText}>짱깸뽀 3번 오락기</Text>
+              </View>
+              <View style={styles.viewImgWrap}>
+                <View style={styles.titleTextUseWrap}>
+                  <Text style={styles.titleTextUse}> 점검중</Text>
+                </View>
+                <Image
+                  style={styles.viewImg}
+                  source={game}
+                  resizeMode="contain"
+                />
+              </View>
             </View>
           </View>
         </ScrollView>
@@ -115,11 +134,16 @@ const styles = StyleSheet.create({
   },
   viewRoot: {
     flex: 1,
+    // justifyContent: "center", // 세로 중앙 정렬
+    // alignItems: "center", // 가로 중앙 정렬
+  },
+  scrikkViewWrap: {
     justifyContent: "center", // 세로 중앙 정렬
     alignItems: "center", // 가로 중앙 정렬
   },
   viewWrap: {
     width: 250, // 원하는 너비로 설정
+    height: "auto",
     justifyContent: "center", // 세로 중앙 정렬
     alignItems: "center", // 가로 중앙 정렬
     paddingHorizontal: 15,
@@ -171,10 +195,10 @@ const styles = StyleSheet.create({
   titleTextUseWrap: {
     position: "absolute",
     backgroundColor: "#0000007d",
-    height: 200,
+    height: 225,
     zIndex: 10,
     width: "100%",
-    top: 90,
+    top: 0,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -188,10 +212,10 @@ const styles = StyleSheet.create({
     width: "80%",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "black",
   },
   viewImg: {
     width: "100%",
+    minHeight: 225,
   },
   Btn: {
     alignItems: "center",
@@ -210,6 +234,7 @@ const styles = StyleSheet.create({
     fontFamily: "고령딸기체",
   },
   BtnWrap: {
+    width: "80%",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
