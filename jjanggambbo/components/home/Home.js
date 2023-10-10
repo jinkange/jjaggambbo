@@ -14,11 +14,14 @@ import { Card } from "@rneui/themed";
 
 import background from "../../assets/main/background.png";
 import game from "../../assets/game.png";
+import myFont from "../../assets/fonts/my-font.ttf";
 
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
 SplashScreen.preventAutoHideAsync();
+
+
 
 {
   /* <Button
@@ -35,19 +38,6 @@ SplashScreen.preventAutoHideAsync();
           /> */
 }
 const Home = ({ navigation }) => {
-  const [fontsLoaded] = useFonts({
-    고령딸기체: require("../../assets/font/고령딸기체.ttf"),
-  });
-
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-
-  if (!fontsLoaded) {
-    return null;
-  }
   return (
     <View style={styles.container}>
       <ImageBackground

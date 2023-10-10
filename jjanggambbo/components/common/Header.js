@@ -19,25 +19,15 @@ import profile from "../../assets/main/profile.png";
 import silver_coin from "../../assets/main/silver_coin.png";
 import gold_coin from "../../assets/main/gold_coin.png";
 
+import myFont from "../../assets/fonts/고령딸기체.otf";
+
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
 SplashScreen.preventAutoHideAsync();
 
+
 const Header = () => {
-  const [fontsLoaded] = useFonts({
-    고령딸기체: require("../../assets/font/고령딸기체.ttf"),
-  });
-
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-
-  if (!fontsLoaded) {
-    return null;
-  }
   return (
     <>
       <StatusBar />
