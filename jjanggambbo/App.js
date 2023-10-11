@@ -1,11 +1,14 @@
-import React from "react";
-import {useCallback} from "react";
-import {Dimensions, StyleSheet, ImageBackground, View, Text, SafeAreaView} from "react-native";
+import {React, useCallback} from "react";
+import {Dimensions, StyleSheet} from "react-native";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import {getStatusBarHeight} from "react-native-status-bar-height";
+import {SafeAreaProvider} from "react-native-safe-area-context";
+import {StatusBar} from "expo-status-bar";
+import {useFonts} from "expo-font";
 
-const Stack = createNativeStackNavigator();
-
+import FontAwesome5Icon from "react-native-vector-icons/AntDesign";
 import Header from "./components/common/Header";
 import Home from "./components/home/Home";
 import Play from "./components/play/Play";
@@ -13,19 +16,8 @@ import Setting from "./components/setting/Setting";
 import Mypage from "./components/mypage/Mypage";
 import Shop from "./components/shop/Shop";
 
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-
-import FontAwesome5Icon from "react-native-vector-icons/AntDesign";
-
+const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
-const ScreenHeghit = Dimensions.get("window").height;
-
-import {getStatusBarHeight} from "react-native-status-bar-height";
-
-import {useFonts} from "expo-font";
-import {StatusBar} from "expo-status-bar";
-import {SafeAreaProvider} from "react-native-safe-area-context";
 
 function RootNavigator() {
   return (
@@ -84,7 +76,7 @@ const TabNavi = () => {
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
-    고령딸기체: require("./assets/fonts/고령딸기체.otf"),
+    고령딸기체: require("./assets/fonts/고령딸기체+TTF.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -97,7 +89,6 @@ export default function App() {
     return null;
   }
 
-  console.log(getStatusBarHeight());
   return (
     <SafeAreaProvider style={styles.container}>
       <NavigationContainer>
