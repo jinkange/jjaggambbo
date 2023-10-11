@@ -1,27 +1,9 @@
 import React from "react";
-import { useCallback } from "react";
-import {
-  View,
-  Button,
-  ScrollView,
-  StyleSheet,
-  Image,
-  Text,
-  Pressable,
-  ImageBackground,
-} from "react-native";
-import { Card } from "@rneui/themed";
-
+import {useCallback} from "react";
+import {View, Button, ScrollView, StyleSheet, Image, Text, Pressable, ImageBackground} from "react-native";
 import background from "../../assets/main/background.png";
 import game from "../../assets/game.png";
-import myFont from "../../assets/fonts/my-font.ttf";
-
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-
-SplashScreen.preventAutoHideAsync();
-
-
+import {useFonts} from "expo-font";
 
 {
   /* <Button
@@ -37,14 +19,10 @@ SplashScreen.preventAutoHideAsync();
             }}
           /> */
 }
-const Home = ({ navigation }) => {
+const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <ImageBackground
-        source={background}
-        style={styles.background}
-        resizeMode="cover"
-      >
+      <ImageBackground source={background} style={styles.background} resizeMode="cover">
         <ScrollView style={styles.viewRoot}>
           <View style={styles.scrikkViewWrap}>
             <View style={styles.viewWrap}>
@@ -52,18 +30,13 @@ const Home = ({ navigation }) => {
                 <Text style={styles.titleText}>짱깸뽀 1번 오락기</Text>
               </View>
               <View style={styles.viewImgWrap}>
-                <Image
-                  style={styles.viewImg}
-                  source={game}
-                  resizeMode="contain"
-                />
+                <Image style={styles.viewImg} source={game} resizeMode="contain" />
               </View>
               <View style={styles.BtnWrap}>
                 <Pressable
                   style={styles.Btn}
                   // 다른 페이지로 이동
-                  onPress={() => navigation.navigate("Play")}
-                >
+                  onPress={() => navigation.navigate("Play")}>
                   <Text style={styles.BtnText}>PLAY</Text>
                 </Pressable>
               </View>
@@ -76,18 +49,13 @@ const Home = ({ navigation }) => {
                 <View style={styles.titleTextUseWrap}>
                   <Text style={styles.titleTextUse}> 사용중</Text>
                 </View>
-                <Image
-                  style={styles.viewImg}
-                  source={game}
-                  resizeMode="contain"
-                />
+                <Image style={styles.viewImg} source={game} resizeMode="contain" />
               </View>
               <View style={styles.BtnWrap}>
                 <Pressable
                   style={styles.Btn}
                   // 다른 페이지로 이동
-                  onPress={() => navigation.navigate("Play")}
-                >
+                  onPress={() => navigation.navigate("Play")}>
                   <Text style={styles.BtnText}>관전하기</Text>
                 </Pressable>
               </View>
@@ -100,11 +68,7 @@ const Home = ({ navigation }) => {
                 <View style={styles.titleTextUseWrap}>
                   <Text style={styles.titleTextUse}> 점검중</Text>
                 </View>
-                <Image
-                  style={styles.viewImg}
-                  source={game}
-                  resizeMode="contain"
-                />
+                <Image style={styles.viewImg} source={game} resizeMode="contain" />
               </View>
             </View>
           </View>

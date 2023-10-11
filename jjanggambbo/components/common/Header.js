@@ -1,17 +1,10 @@
 // Common/Header.js
 import React from "react";
-import { useCallback } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ImageBackground,
-  StatusBar,
-} from "react-native";
-import { Card, Chip } from "@rneui/themed";
+import {useCallback} from "react";
+import {View, Text, StyleSheet, Image, ImageBackground, StatusBar} from "react-native";
+import {Card, Chip} from "@rneui/themed";
 
-import { Dimensions } from "react-native";
+import {Dimensions} from "react-native";
 let ScreenHeight = Dimensions.get("window").height;
 let ScreenWidth = Dimensions.get("window").width;
 
@@ -21,48 +14,46 @@ import gold_coin from "../../assets/main/gold_coin.png";
 
 import myFont from "../../assets/fonts/고령딸기체.otf";
 
-import { useFonts } from "expo-font";
+import {useFonts} from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
-SplashScreen.preventAutoHideAsync();
+import {getStatusBarHeight} from "react-native-status-bar-height";
 
+//SplashScreen.preventAutoHideAsync();
 
 const Header = () => {
   return (
-    <>
-      <StatusBar />
-      <View style={styles.root}>
-        <View style={styles.userRoot}>
-          <View>
-            <Image style={styles.userNameImg} source={profile} />
-          </View>
-          <View>
-            <Text style={styles.userNameText}>진민강</Text>
-          </View>
+    <View style={styles.root}>
+      <View style={styles.userRoot}>
+        <View>
+          <Image style={styles.userNameImg} source={profile} />
         </View>
-        <View style={styles.coinRoot}>
-          <View style={styles.coinWrap}>
-            <View>
-              <Image style={styles.coinImg} source={silver_coin} />
-            </View>
-            <View style={styles.coinTextWrap}>
-              <Text style={styles.coinText}>0</Text>
-            </View>
-          </View>
-          <View style={styles.coinWrap}>
-            <View>
-              <Image style={styles.coinImg} source={gold_coin} />
-            </View>
-            <View style={styles.coinTextWrap}>
-              <Text style={styles.coinText}>10</Text>
-            </View>
-            {/* <View style={styles.coinTextPlusWrap}>
-              <Text style={styles.coinTextPlus}>+</Text>
-            </View> */}
-          </View>
+        <View>
+          <Text style={styles.userNameText}>진민강</Text>
         </View>
       </View>
-    </>
+      <View style={styles.coinRoot}>
+        <View style={styles.coinWrap}>
+          <View>
+            <Image style={styles.coinImg} source={silver_coin} />
+          </View>
+          <View style={styles.coinTextWrap}>
+            <Text style={styles.coinText}>0</Text>
+          </View>
+        </View>
+        <View style={styles.coinWrap}>
+          <View>
+            <Image style={styles.coinImg} source={gold_coin} />
+          </View>
+          <View style={styles.coinTextWrap}>
+            <Text style={styles.coinText}>10</Text>
+          </View>
+          {/* <View style={styles.coinTextPlusWrap}>
+              <Text style={styles.coinTextPlus}>+</Text>
+            </View> */}
+        </View>
+      </View>
+    </View>
   );
 };
 
