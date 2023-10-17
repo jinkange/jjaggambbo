@@ -32,24 +32,24 @@ const Play = ({navigation}) => {
     </View>
   ) : (
     <View>
-      {/* <View>
-      <Card containerStyle={styles.card}>
-        <Card.Title>짱깸뽀 1번 기계</Card.Title>
-        <Card.Divider />
-        <WebView
-          source={{ uri: ADUINO_CAMERA1_URL+STREMING_URL }} // 웹페이지의 URL을 설정
-          style={styles.webview}
-        />
-        <Card.Divider />
-        <Button
-          title='PLAY'
-          onPress={() => navigation.navigate('Play')}
-        />
-      </Card>
-        </View>
-      <View><Text>별명/코인/티켓</Text></View>
-      <Button title='시작하기'/>
-      <Button title='나가기' onPress={() => navigation.navigate('Home')}/> */}
+      <View>
+        <Card containerStyle={styles.card}>
+          <Card.Title>짱깸뽀 1번 기계</Card.Title>
+          <Card.Divider />
+          <WebView
+            androidHardwareAccelerationDisabled
+            source={{uri: ADUINO_CAMERA1_URL + STREMING_URL}} // 웹페이지의 URL을 설정
+            style={styles.webview}
+          />
+          <Card.Divider />
+          <Button title="PLAY" onPress={() => navigation.navigate("Play")} />
+        </Card>
+      </View>
+      <View>
+        <Text>별명/코인/티켓</Text>
+      </View>
+      <Button title="시작하기" />
+      <Button title="나가기" onPress={() => navigation.navigate("Home")} />
     </View>
   );
 };
@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
   },
   webview: {
     flex: 1,
+    opacity: 0.99,
   },
 });
 
