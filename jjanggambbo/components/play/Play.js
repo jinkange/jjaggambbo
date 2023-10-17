@@ -4,7 +4,6 @@ import {View, Text, StyleSheet, Button, Platform} from "react-native";
 //import { Card, Button } from 'react-native-elements';
 import {createStackNavigator} from "@react-navigation/stack";
 import WebView from "react-native-webview";
-import {ADUINO_CAMERA1_URL} from "@env";
 import {STREMING_URL} from "../../const/const";
 import {Card, Chip} from "@rneui/themed";
 import {Dimensions} from "react-native";
@@ -20,7 +19,7 @@ const Play = ({navigation}) => {
           <Card.Title>짱깸뽀 1번 기계</Card.Title>
           <Card.Divider />
           {/* WebView를 사용하여 웹페이지를 표시 */}
-          <iframe src={ADUINO_CAMERA1_URL + STREMING_URL} height={"400"} width={"100%"} />
+          <iframe src={"http://27.124.206.159:200" + STREMING_URL} height={"400"} width={"100%"} />
           <Card.Divider />
           <Button title="PLAY" onPress={() => navigation.navigate("Play")} />
         </Card>

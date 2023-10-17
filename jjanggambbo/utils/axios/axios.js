@@ -1,16 +1,15 @@
-import axios from 'axios';
-import { ADUINO_BASE_URL,API_BASE_URL,ADUINO_CAMERA1_URL } from '@env';
+import axios from "axios";
 
 const aduino = axios.create({
-    baseURL: ADUINO_BASE_URL,
-})
+  baseURL: "http://27.124.206.159:100",
+});
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
-})
+  baseURL: "43.200.94.18:3000",
+});
 
 const stream1 = axios.create({
-  baseURL: ADUINO_CAMERA1_URL,
-})
+  baseURL: "http://27.124.206.159:200",
+});
 
-export {aduino,api,stream1};
+export {aduino, api, stream1};
