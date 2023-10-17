@@ -1,8 +1,7 @@
 {
   "expo": {
     "name": "jjanggambbo",
-    "slug": "jjanggambbo",
-
+    "slug": "jgb",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/jjanggambbo.png",
@@ -12,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "bundleIdentifier": "com.jinkange.jjanggambbo",
       "supportsTablet": true,
@@ -32,10 +33,10 @@
     },
     "extra": {
       "eas": {
-        "projectId": "6dd65e9e-9101-418c-b6f4-8aefbfd11260"
+        "projectId": "b4a1126c-fc2a-495a-8a14-0112cc959eba"
       }
     },
-    "owner": "jinkange",
+    "owner": "jinminkang",
     "runtimeVersion": {
       "policy": "appVersion"
     },
