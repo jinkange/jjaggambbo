@@ -135,9 +135,8 @@ android {
 }
 
 dependencies {
-    implementation'com.facebook.soloader:soloader:0.9.0+'
-    
     // The version of react-native is set by the React Native Gradle Plugin
+    implementation'com.facebook.soloader:soloader:0.9.0+'
     implementation("com.facebook.react:react-android")
 
     def isGifEnabled = (findProperty('expo.gif.enabled') ?: "") == "true";

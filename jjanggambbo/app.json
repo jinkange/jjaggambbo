@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "com.jinkange.jjanggambbo",
       "supportsTablet": true,
@@ -45,6 +43,7 @@
     },
     "plugins": [
       [
+        "3rd-party-native-module",
         "expo-build-properties",
         {
           "android": {
